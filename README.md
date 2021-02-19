@@ -1,2 +1,2 @@
-# Design
-taking my design skills to the next level
+# Designer Suthy 🎨
+taking my design skills to the next level! 
