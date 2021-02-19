@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- Notes: write markup in content hiearchy, read notes for more info -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Simple</title>
+  </head>
+  <body>
+    <header>
+      <div class="container container-nav">
+        <nav>
+          <div class="logo">
+            <h1 class="title">Living the simple life</h1>
+            <p class="subtitle">A blog exploring minimalism in life</p>
+          </div>
+          <ul class="pages">
+            <li class="page"><a class="current-page" href="#">Home</a></li>
+            <li class="page"><a href="#">About me</a></li>
+            <li class="page"><a href="#">Recent Posts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container container-main">
+      <main role="main" class="column">
+        <!-- main article  -->
+        <article class="main-article">
+          <h2 class="main-article-heading">Finding simplicity in life</h2>
+          <p class="main-text">
+            <strong> Life can get complicated really quickly </strong>, but it
+            doesn't have to be! There are many ways to simplify your life,
+            <a href="" class="main-post-link"
+              >a few of which we've explored in the past.</a
+            >
+            This week we're taking a bit of a approach though, in how you can
+            find simplicity in the life you already living.
+          </p>
+          <a href="#" class="read-more">continue reading</a>
+          <img
+            src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            alt="picture of a clock, lamp and plant to show simplicity"
+          />
+          <p class="main-date-comments">July 23, 2019 | 3 comments</p>
+        </article>
+
+        <!-- notes:
+          keep it simple: what does this div do ? 
+          <div class="posts"></div>
+          I just need 4 articles, I'm not using this div for any styling or structuring, only makes code harder to read
+
+          ============================================================================================
+          Lesson: Don't nest elements for organizational purposes. Keep simple as possible! Simpleeee!
+        -->
+
+        <article class="post">
+          <div class="imageAndComment">
+            <img
+              src="http://images.unsplash.com/photo-1496116218417-1a781b1c416c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080"
+              alt="bowl of 3 dumplings to show elegance of food"
+            />
+            <p class="post-date-comment">July 19, 2019 | 3 comments</p>
+          </div>
+          <div class="post-info">
+            <h2>Keeping cooking simple</h2>
+            <p>
+              Food is a very important part of everyone's life. If you want to
+              be healthy, you have to eat healthy. One of the easiest ways to do
+              that is to keep your cooking nice and simple.
+            </p>
+            <a href="#" class="read-more">continue reading</a>
+          </div>
+        </article>
+
+        <!-- Wierd image glitch:
+          
+          When used this image, it's like image doesn't exist and text goes under image (doesn't behave to flex-box):
+          src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=200"
+
+          When used this image, it behaves like a proper block element.
+          src="http://images.unsplash.com/photo-1496116218417-1a781b1c416c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080"
+
+          ==============================================================================================================================================================
+          Lesson: Different Images and have different behaviours, use a different image when this happens. Problem has nothing to do with flex or text. Simply the image
+        -->
+
+        <article class="post">
+          <div class="imageAndComment">
+            <img
+              src="https://unsplash.com/photos/nvzvOPQW0gc/download"
+              alt="mimimalistic office desk to express beauty in simplicity"
+            />
+            <p class="post-date-comment">July 12, 2019 | 3 comments</p>
+          </div>
+          <div class="post-info">
+            <h2>Simplicity and work</h2>
+            <p>
+              Work is often a major source of stress. People get frustrated, it
+              ruins their relationship with others and it leads to burnout. By
+              keeping your work life as simple as possible, it will help balance
+              everything out.
+            </p>
+            <a href="#" class="read-more">continue reading</a>
+          </div>
+        </article>
+
+        <article class="post">
+          <div class="imageAndComment">
+            <img
+              class="plant-img"
+              src="https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+              alt="plant in vase to show beauty and simplicity of nature"
+            />
+            <p class="post-date-comment">July 3, 2019 | 3 comments</p>
+          </div>
+          <div class="post-info">
+            <h2>Simple decorations</h2>
+            <p>
+              A home isn't a home until you've decorated a little. People either
+              don't decorate, or they go overboard and it doesn't have the
+              impact they were hoping for. Staying simple will help draw the eye
+              where you want it to and make things pop like never before.
+            </p>
+            <a href="#" class="read-more">continue reading</a>
+          </div>
+        </article>
+        <!-- </div> -->
+      </main>
+
+      <!-- side column (about me & recent posts)-->
+      <aside class="column sidebar">
+        <!-- About Me -->
+        <div class="sidebar-content about-me">
+          <h2 class="sidebar-title">ABOUT ME</h2>
+          <img
+            src="http://images.unsplash.com/photo-1548213238-0da7521bd6e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080"
+            alt="man similing in the heart of nature"
+          />
+          <p class="sidebar-p">
+            I find life better, and I'm happier, when things are nice and
+            simple.
+          </p>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="sidebar-content recent-posts">
+          <h2 class="recent-posts-title">RECENT POSTS</h2>
+
+          <div class="sidebar-recent-post">
+            <img
+              src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=200"
+              alt="bowl of delicious dumplings"
+            />
+            <h3 class="sidebar-recent-post-title">Keeping cooking simple</h3>
+          </div>
+
+          <div class="sidebar-recent-post">
+            <img
+              src="https://unsplash.com/photos/nvzvOPQW0gc/download"
+              alt="mimimalistic office desk to express beauty in simplicity"
+            />
+            <h3 class="sidebar-recent-post-title">Simplicity and Work</h3>
+          </div>
+
+          <div class="sidebar-recent-post">
+            <img
+              src="https://images.unsplash.com/photo-1487700160041-babef9c3cb55?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+              alt="plant in vase to show beauty and simplicity of nature"
+            />
+            <h3 class="sidebar-recent-post-title">Simple decorations</h3>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <h4 class="footer-title">Living the Simple Life</h4>
+        <p class="copywrite">Copyright 2019</p>
+      </div>
+    </footer>
+  </body>
+</html>

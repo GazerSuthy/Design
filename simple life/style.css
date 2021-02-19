@@ -1,0 +1,361 @@
+/* clear plan of action! Focus on one thing at a time, don't jump around*/
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* ===============
+    Typography
+=================*/
+
+h1 {
+  font-family: "Lora", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+h2 {
+  font-family: "Lora", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+p {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.5em;
+}
+strong {
+  font-weight: 500;
+  color: #707070;
+}
+
+/* logo */
+.title {
+  color: #143774;
+  margin: 0;
+}
+.subtitle {
+  color: #1792d2;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+  h2 {
+    font-size: 1.55rem;
+  }
+  p {
+    font-size: 1.325rem;
+  }
+  .logo {
+    text-align: left;
+  }
+  .subtitle {
+    letter-spacing: 4px;
+  }
+  .li {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+/* ===============
+    Layout
+=================*/
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  /* border: solid red 1px; */
+}
+
+header {
+  background: #f8f8f8;
+}
+
+/* navagation */
+nav {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 3em;
+  padding-bottom: 1.5em;
+}
+
+/* nav links */
+nav ul {
+  padding: 0;
+}
+nav li {
+  list-style: none;
+  margin: 2em 0;
+}
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #717171;
+  padding: 0.3em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.current-page {
+  border-bottom: 1.8px solid #717171;
+}
+
+a:hover,
+a:focus {
+  color: #1792d2;
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    padding: 4.5em;
+  }
+  .container {
+    /* percentage width depends on the content. We want a fixed width size */
+    width: 1111px;
+  }
+  nav {
+    flex-direction: row;
+    padding: 2em 0;
+    justify-content: space-between;
+  }
+  nav ul {
+    display: flex;
+  }
+  nav li {
+    margin: 0;
+    padding-left: 3em;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+}
+
+/* main article */
+main {
+  margin-top: 3em;
+}
+.main-article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5em;
+  border-bottom: 1px solid #707070;
+}
+.main-article img {
+  order: -2;
+  width: 100%;
+}
+.main-date-comments {
+  order: -1;
+  color: #707070;
+  font-weight: 300;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+.main-text {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+.main-post-link,
+.read-more {
+  color: #1792d2;
+}
+.read-more {
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-bottom: 2.5em;
+}
+.read-more:hover,
+.read-more:focus,
+.main-post-link:hover,
+.main-post-link:focus {
+  color: #0c3e58;
+}
+
+@media screen and (min-width: 1200px) {
+  .container-main {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* main article */
+  main {
+    width: 70%;
+    margin-bottom: 3em;
+  }
+  .main-article img {
+    height: 300px;
+    object-fit: cover;
+  }
+  .read-more {
+    font-size: 0.8rem;
+  }
+}
+
+/* posts */
+
+.post {
+  margin-bottom: 4em;
+}
+.post img {
+  width: 100%;
+}
+.imageAndComment {
+  position: relative;
+}
+.post-date-comment {
+  position: absolute;
+  right: 10px;
+  bottom: -40px;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+.post-info h2 {
+  margin-top: 3px;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1200px) {
+  .post {
+    display: flex;
+    justify-content: space-between;
+  }
+  .imageAndComment {
+    width: 27%;
+  }
+  .imageAndComment img {
+    height: 242px;
+    object-fit: cover;
+  }
+  /* object-position to fix object-fit of plant, plant to much to the left*/
+  .plant-img {
+    object-position: left;
+  }
+  .post-date-comment {
+    left: 0;
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+  .post-info {
+    width: 66%;
+  }
+  .post-info p {
+    color: #707070;
+    line-height: 30px;
+    font-size: 1.2rem;
+  }
+}
+
+/* sidebar */
+.sidebar-content {
+  border: 20px solid #ebebeb;
+}
+.sidebar-content img {
+  width: 100%;
+  /* image keeps its aspect ratio and fills the given dimension  */
+  object-fit: cover;
+}
+/* About me */
+.about-me {
+  padding: 4em 1.5em 1em 1.5em;
+  margin-bottom: 5em;
+}
+.about-me img {
+  height: 133px;
+}
+.about-me h2 {
+  display: none;
+}
+.about-me p {
+  color: #143774;
+  font-size: 1rem;
+}
+/* Recent posts */
+.recent-posts {
+  padding: 2em 1.5em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 7em;
+}
+.recent-posts-title {
+  color: #143774;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1.1rem;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+.sidebar-recent-post {
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid #707070;
+  margin-bottom: 2em;
+}
+
+.sidebar-recent-post:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* .last-post {
+  * we can use pseduo class for last child element
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+} */
+
+.sidebar-recent-post img {
+  height: 87px;
+}
+.sidebar-recent-post h3 {
+  font-weight: 300;
+  color: #143774;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+  aside {
+    width: 20%;
+    margin-top: 3em;
+  }
+  .about-me {
+    margin-bottom: 3em;
+    padding-top: 0.5em;
+  }
+  .about-me h2 {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+}
+
+/* footer */
+footer {
+  text-align: center;
+  background-color: #143774;
+  color: white;
+  padding: 5em 1em;
+}
+footer h4,
+footer p {
+  opacity: 0.54;
+}
+footer h4 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+footer p {
+  margin-top: 6px;
+}
