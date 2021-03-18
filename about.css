@@ -1,0 +1,334 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* -=[typography]=- */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.title h1 {
+  font-size: 30px;
+  font-weight: 800;
+}
+.subhead {
+  font-weight: 600;
+  text-align: center;
+}
+.img-text {
+  font-size: 14px;
+  font-style: italic;
+}
+article p {
+  line-height: 1.6;
+}
+footer h3 {
+  font-weight: 700;
+  color: #757575;
+  font-size: 0.7rem;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+a:hover,
+a:focus {
+  color: #ffe600;
+}
+.current {
+  border-bottom: #ffe600 3px solid;
+}
+.current-active {
+  border-right: #ffe600 5.5px solid;
+}
+
+@media all and (min-width: 900px) {
+  .title h1 {
+    font-size: 44px;
+  }
+  .subhead {
+    font-size: 18px;
+  }
+  article h2 {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  article p {
+    font-size: 18px;
+  }
+  .img-text {
+    font-size: 16px;
+  }
+}
+
+/* -=[layout]=- */
+
+/* Nav */
+header {
+  background: black;
+  padding: 1em 2em;
+  margin-bottom: 2em;
+}
+.container-nav {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.logo {
+  width: 200px;
+}
+nav {
+  display: none;
+}
+.burger {
+  justify-self: end;
+  align-self: center;
+}
+
+/* mobile nav */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 77px;
+  transform: translateX(100%);
+  z-index: 100;
+}
+.mobile-nav-option {
+  text-align: center;
+  background: #770f2a;
+  padding: 1.185em 1.8em;
+  transition: transform 200ms;
+}
+.mobile-nav-option:hover,
+.mobile-nav-option:focus {
+  background: #5e0c21;
+  transform: scale(1.1);
+}
+/* nav-burger clicked */
+.show-navigation {
+  /* originally off screen (x = 100% and we move it back onscreen by setting it back to 0%) */
+  transform: translateX(0%);
+  transition: transform 555ms ease-out;
+}
+.hide-navigation {
+  /* move nav off screen position */
+  transform: translateX(100%);
+  transition: transform 555ms ease-in;
+}
+
+@media all and (min-width: 900px) {
+  /* play around with grid and nav :D */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .burger {
+    display: none;
+  }
+  nav {
+    display: block;
+  }
+  .logo-nav {
+    display: grid;
+    grid-template-columns: 250px 500px;
+    /* align-items goes on the parent */
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  header {
+    padding-left: 0;
+  }
+}
+main {
+  display: grid;
+  grid-gap: 2em;
+  margin: 2em;
+  justify-content: center;
+}
+/* title {the design looks simple but it takes a lot of work, there are levels to this shit!} */
+.title {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 200px;
+}
+.title h1 {
+  text-align: center;
+}
+.title-design {
+  background: #ffe600;
+  width: 145px;
+  height: 20px;
+  position: absolute;
+  right: 18px;
+  bottom: 4px;
+  z-index: -1;
+}
+.subhead {
+  margin: 1em 0;
+}
+.design-underline {
+  height: 1.5px;
+  width: 100px;
+  background: black;
+  margin: 0 auto;
+}
+
+/* group photo */
+.photo {
+  /* flex allows us to use margins to position elements in the container */
+  display: flex;
+  position: relative;
+  width: 419px;
+  margin: 0 auto;
+}
+.photo img {
+  width: 400px;
+  /* to use margins to move elements the parent has to be either flex or grid */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  z-index: 1;
+}
+.black-card-style,
+.yellow-card-style {
+  width: 400px;
+  height: 210.52px;
+  position: absolute;
+}
+.black-card-style {
+  background-color: black;
+  right: 2px;
+  bottom: 10px;
+  z-index: 0;
+}
+.yellow-card-style {
+  background-color: #ffe600;
+  z-index: -1;
+  right: -5px;
+  bottom: 5px;
+}
+.img-text {
+  text-align: center;
+  width: 333px;
+  margin: 0 auto;
+}
+/* about article */
+article {
+  text-align: center;
+}
+article h2 {
+  margin-bottom: 0.5em;
+}
+article p {
+  margin-bottom: 2em;
+  max-width: 555px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (min-width: 900px) {
+  main {
+    grid-template-columns: 1fr 2fr;
+    grid-row-gap: 4em;
+    grid-column-gap: 3em;
+    grid-template-areas:
+      "Head Head"
+      "Photo About";
+  }
+  .head {
+    grid-area: Head;
+  }
+  .photo-container {
+    grid-area: Photo;
+    justify-self: flex-start;
+    margin-top: 1em;
+  }
+  article {
+    grid-area: About;
+  }
+  .subhead {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .title {
+    width: 250px;
+  }
+  .title-design {
+    width: 202px;
+  }
+  article {
+    margin-bottom: 7em;
+  }
+  article p {
+    max-width: 80%;
+  }
+}
+
+/* footer */
+footer {
+  background: #c4c4c4;
+  padding: 2em 0;
+}
+.container-footer {
+  display: grid;
+  grid-template-areas:
+    "Logo"
+    "Creator";
+  grid-gap: 0.5em;
+}
+.footer-logo {
+  width: 111px;
+  grid-area: Logo;
+  margin: 0 auto;
+}
+footer h3 {
+  grid-area: Creator;
+  margin: 0 auto;
+}
+.social-icons {
+  display: none;
+}
+
+@media all and (min-width: 900px) {
+  .container-footer {
+    grid-template-areas:
+      "Logo Social"
+      "Creator Social";
+  }
+  .footer-logo,
+  footer h3 {
+    margin: 0;
+  }
+  .footer-logo {
+    width: 130px;
+    grid-area: Logo;
+  }
+  footer h3 {
+    grid-area: Creator;
+  }
+  .social-icons {
+    display: block;
+    grid-area: Social;
+    align-self: center;
+    justify-self: end;
+  }
+  .icon {
+    margin: 0 11px;
+  }
+}

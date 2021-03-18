@@ -1,0 +1,336 @@
+/* I am extremely proud of how I got the background image to behave perfectly in a responsive manner, making sure luffy is still visible at every screen size 😁 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* -=[typography]=- */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.head {
+  color: white;
+  font-size: 1rem;
+  font-weight: 800;
+}
+.read-manga {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.highlight {
+  color: #ffe600;
+}
+.read-manga {
+  font-weight: 800;
+  color: black;
+}
+.info-card {
+  text-align: center;
+}
+.info-card h2 {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+.info-card p {
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+footer h3 {
+  font-weight: 700;
+  color: #757575;
+  font-size: 0.7rem;
+}
+
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+a:hover,
+a:focus {
+  color: #ffe600;
+}
+.current {
+  border-bottom: #ffe600 3px solid;
+}
+.current-active {
+  border-right: #ffe600 5.5px solid;
+}
+
+@media all and (min-width: 833px) {
+  .head {
+    font-size: 1.5rem;
+  }
+  .read-manga {
+    font-size: 1.1rem;
+  }
+  .info-card h2 {
+    font-size: 1.3rem;
+  }
+  .info-card p {
+    font-size: 1.1rem;
+  }
+}
+
+@media all and (min-width: 1111px) {
+  .head {
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+  .read-manga {
+    font-size: 1.1rem;
+  }
+  .info-card h2 {
+    font-size: 1.3rem;
+    padding-bottom: 0;
+  }
+  .info-card p {
+    font-size: 1rem;
+  }
+  footer h3 {
+    font-size: 0.8rem;
+  }
+}
+
+/* -=[layout]=- */
+body {
+  overflow-x: hidden;
+}
+.hero {
+  background-image: url(https://webdesignerwall.com/wp-content/uploads/2008/01/luffy-minimalist-one-piece-wallpaper-21947.jpg);
+  background-size: cover;
+  background-position: -20px;
+  padding: 0 2em;
+  padding-top: 0.8em;
+  padding-bottom: 3em;
+}
+.container-hero {
+  display: grid;
+  grid-template-areas:
+    "Logo Burger"
+    "Goat-Speech Goat-Speech";
+  grid-gap: 1em;
+}
+.logo {
+  width: 200px;
+  grid-area: Logo;
+}
+.burger {
+  grid-area: Burger;
+  align-self: center;
+  padding: 0em 0.1em;
+  /* I can control the elements in a cell using margins */
+  margin-left: auto;
+}
+.CTA {
+  grid-area: Goat-Speech;
+  width: 55%;
+  margin-left: 7px;
+}
+h1 {
+  margin-bottom: 1em;
+}
+.quote-author {
+  display: block;
+}
+.read-manga {
+  /* since it's a link "a" make it inline-block for the margin and paddings to work*/
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background: #ffe600;
+  border-radius: 5px;
+  transition: transform 200ms;
+}
+.read-manga:hover,
+.read-manga:focus {
+  color: #770f2a;
+  transform: scale(1.1);
+}
+nav {
+  display: none;
+}
+
+/* mobile nav */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 77px;
+  transform: translateX(100%);
+}
+.mobile-nav-option {
+  text-align: center;
+  background: #770f2a;
+  padding: 1.185em 1.8em;
+  transition: transform 200ms;
+}
+.mobile-nav-option:hover,
+.mobile-nav-option:focus {
+  background: #5e0c21;
+  transform: scale(1.1);
+}
+/* nav-burger clicked */
+.show-navigation {
+  /* originally off screen (x = 100% and we move it back onscreen by setting it back to 0%) */
+  transform: translateX(0%);
+  transition: transform 555ms ease-out;
+}
+.hide-navigation {
+  /* move nav off screen position */
+  transform: translateX(100%);
+  transition: transform 555ms ease-in;
+}
+
+@media all and (min-width: 833px) {
+  .CTA {
+    grid-area: Goat-Speech;
+    width: 45%;
+    margin-left: 7px;
+  }
+  .hero {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: black;
+  }
+  .mobile-nav-option {
+    padding: 1.42em 3em;
+  }
+}
+
+@media all and (min-width: 1111px) {
+  .container-hero {
+    grid-gap: 2em;
+  }
+  .hero {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 88%;
+    background-color: black;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  header {
+    display: grid;
+    grid-template-areas: "Logo Nav";
+    grid-gap: 2em;
+  }
+  .logo {
+    width: 222px;
+  }
+  .burger {
+    display: none;
+  }
+  nav {
+    display: block;
+    grid-area: Nav;
+    align-self: center;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+  a {
+    margin: 0 0.5em;
+  }
+  .show-navigation {
+    display: none;
+  }
+}
+
+main {
+  padding: 2em 3em;
+  margin-bottom: 1em;
+}
+.container-main {
+  display: grid;
+  grid-gap: 4em;
+}
+
+@media all and (min-width: 1111px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  main {
+    padding: 4em 0;
+  }
+  .container-main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8em;
+  }
+}
+
+footer {
+  background: #c4c4c4;
+  padding: 3em 0;
+}
+.container-footer {
+  display: grid;
+  grid-template-areas:
+    "Logo"
+    "Creator";
+  grid-gap: 0.5em;
+}
+.footer-logo {
+  width: 111px;
+  grid-area: Logo;
+  margin: 0 auto;
+}
+footer h3 {
+  grid-area: Creator;
+  margin: 0 auto;
+}
+.social-icons {
+  display: none;
+}
+
+@media all and (min-width: 1111px) {
+  .container-footer {
+    grid-template-areas:
+      "Logo Social"
+      "Creator Social";
+  }
+  .footer-logo,
+  footer h3 {
+    margin: 0;
+  }
+  .footer-logo {
+    width: 130px;
+    grid-area: Logo;
+  }
+  footer h3 {
+    grid-area: Creator;
+  }
+  .social-icons {
+    display: block;
+    grid-area: Social;
+    align-self: center;
+    justify-self: end;
+  }
+  .icon {
+    margin: 0 11px;
+  }
+}
+.title-underline {
+  height: 2px;
+  width: 77px;
+  background-color: #ffe600;
+}
+.underline-center {
+  margin: 1em auto;
+}

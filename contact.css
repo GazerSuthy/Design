@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* -=[typography]=- */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.title h1 {
+  font-weight: bold;
+  font-size: 28px;
+}
+.subhead {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.get-in-touch p {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+}
+label {
+  font-weight: 500;
+  font-size: 14px;
+}
+footer h3 {
+  font-weight: 700;
+  color: #757575;
+  font-size: 0.7rem;
+}
+
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+a:hover,
+a:focus {
+  color: #ffe600;
+}
+.current {
+  border-bottom: #ffe600 3px solid;
+}
+.current-active {
+  border-right: #ffe600 5.5px solid;
+}
+
+@media all and (min-width: 1325px) {
+  .title h1 {
+    font-size: 48px;
+  }
+  .subhead {
+    font-size: 24px;
+  }
+
+  .get-in-touch h3 {
+    font-size: 22px;
+  }
+  .get-in-touch p {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  label {
+    font-size: 24px;
+  }
+}
+
+/* -=[layout]=- */
+/* Nav */
+header {
+  background: black;
+  padding: 1em 2em;
+  margin-bottom: 2em;
+}
+.container-nav {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.logo {
+  width: 200px;
+}
+nav {
+  display: none;
+}
+.burger {
+  justify-self: end;
+  align-self: center;
+}
+
+/* mobile nav */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 77px;
+  transform: translateX(100%);
+}
+.mobile-nav-option {
+  text-align: center;
+  background: #770f2a;
+  padding: 1.185em 1.8em;
+  transition: transform 200ms;
+  z-index: 100;
+}
+.mobile-nav-option:hover,
+.mobile-nav-option:focus {
+  background: #5e0c21;
+  transform: scale(1.1);
+}
+/* nav-burger clicked */
+.show-navigation {
+  /* originally off screen (x = 100% and we move it back onscreen by setting it back to 0%) */
+  transform: translateX(0%);
+  transition: transform 555ms ease-out;
+}
+.hide-navigation {
+  /* move nav off screen position */
+  transform: translateX(100%);
+  transition: transform 555ms ease-in;
+}
+
+/* title */
+.title {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 200px;
+}
+.title h1 {
+  text-align: center;
+}
+.title-design {
+  background: #ffe600;
+  width: 145px;
+  height: 20px;
+  position: absolute;
+  right: 18px;
+  bottom: 4px;
+  z-index: -1;
+}
+.subhead {
+  text-align: center;
+  margin: 1em 0;
+}
+.design-underline {
+  height: 1.5px;
+  width: 100px;
+  background: black;
+  margin: 1.5em auto;
+}
+/* photo */
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  width: 333px;
+  margin-bottom: 3em;
+}
+.photo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: bottom;
+  margin-bottom: 1.2em;
+}
+.get-in-touch h3,
+.get-in-touch p {
+  margin-bottom: 1em;
+}
+
+/* form */
+form {
+  width: 333px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 3em;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.form-input label {
+  margin-bottom: 1em;
+}
+#firstName,
+#lastName {
+  width: 327px;
+  height: 34.41px;
+}
+#message {
+  width: 327px;
+  height: 53.72px;
+}
+
+@media all and (min-width: 1325px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .burger {
+    display: none;
+  }
+  nav {
+    display: block;
+  }
+  .logo-nav {
+    display: grid;
+    grid-template-columns: 250px 500px;
+    /* align-items goes on the parent */
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  header {
+    padding-left: 0;
+  }
+
+  /* main desktop viewport*/
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 2em;
+    grid-template-areas:
+      "Head Head"
+      "Img Form"
+      "Footer Footer";
+    padding-bottom: 4.7em;
+  }
+  .head {
+    grid-area: Head;
+  }
+  .photo-container {
+    grid-area: Img;
+  }
+  form {
+    grid-area: Form;
+    width: initial;
+    display: grid;
+    grid-template-columns: 359.5px 359.5px;
+    grid-template-areas:
+      "FirstName LastName"
+      "Message Message";
+  }
+  .fname {
+    grid-area: FirstName;
+  }
+  .lname {
+    grid-area: LastName;
+    justify-self: flex-end;
+  }
+  .message {
+    grid-area: Message;
+  }
+  #firstName,
+  #lastName {
+    width: 326.5px;
+    height: 55.5px;
+  }
+  #message {
+    width: 719px;
+    height: 122px;
+  }
+}
+
+/* footer */
+footer {
+  background: #c4c4c4;
+  padding: 2em 0;
+}
+.container-footer {
+  display: grid;
+  grid-template-areas:
+    "Logo"
+    "Creator";
+  grid-gap: 0.5em;
+}
+.footer-logo {
+  width: 111px;
+  grid-area: Logo;
+  margin: 0 auto;
+}
+footer h3 {
+  grid-area: Creator;
+  margin: 0 auto;
+}
+.social-icons {
+  display: none;
+}
+
+@media all and (min-width: 1325px) {
+  footer {
+    padding: 4em 0;
+  }
+  .container-footer {
+    grid-template-areas:
+      "Logo Social"
+      "Creator Social";
+  }
+  .footer-logo,
+  footer h3 {
+    margin: 0;
+  }
+  .footer-logo {
+    width: 130px;
+    grid-area: Logo;
+  }
+  footer h3 {
+    grid-area: Creator;
+  }
+  .social-icons {
+    display: block;
+    grid-area: Social;
+    align-self: center;
+    justify-self: end;
+  }
+  .icon {
+    margin: 0 11px;
+  }
+}

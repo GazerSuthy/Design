@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/contact.css" />
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <title>Contact Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="container container-nav">
+        <div class="logo-nav">
+          <img src="./one piece logo.png" alt="One piece logo" class="logo" />
+          <nav>
+            <ul>
+              <li><a href="./home.html" class="home">home</a></li>
+              <li><a href="./about.html" class="home">about us</a></li>
+              <li><a href="#" class="home current">contact</a></li>
+              <li><a href="#" class="home">quotes</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- for mobile -->
+        <div class="burger">
+          <span
+            class="iconify"
+            data-inline="false"
+            data-icon="cil:hamburger-menu"
+            style="color: #ffffff; font-size: 38px; background: #770f2a"
+          ></span>
+        </div>
+
+        <div class="mobile-nav">
+          <a href="./home.html" class="mobile-nav-option option-1">home</a>
+          <a href="./about.html" class="mobile-nav-option option-2">about us</a>
+          <a
+            href="./contact.html"
+            class="current-active mobile-nav-option option-3"
+            >contact</a
+          >
+          <a href="#" class="mobile-nav-option option-4">quotes</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" role="main">
+      <div class="head">
+        <div class="title">
+          <h1>Contact.</h1>
+          <div class="title-design"></div>
+        </div>
+        <p class="subhead">Looking for a chosen one to join our crew!</p>
+        <div class="design-underline"></div>
+      </div>
+
+      <div class="photo-container">
+        <div class="photo">
+          <img
+            src="https://static.wikia.nocookie.net/onepiece/images/b/b1/Thousand_Sunny_Infobox.png/revision/latest?cb=20130619220003"
+            alt="Group photo of one piece crew having fun living life!"
+          />
+          <div class="black-card-style"></div>
+          <div class="yellow-card-style"></div>
+        </div>
+
+        <div class="get-in-touch">
+          <h3>Getting in touch with us !</h3>
+          <p>
+            You can either use the form or send us an email. I'll get back in
+            touch with you as soon as possible!
+          </p>
+        </div>
+      </div>
+
+      <form action="#">
+        <div class="form-input fname">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="firstName" />
+        </div>
+
+        <div class="form-input lname">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="lastName" />
+        </div>
+
+        <div class="form-input message">
+          <label for="message">Message</label>
+          <input type="text" name="message" id="message" />
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="container container-footer">
+        <img
+          src="./one piece footer.png"
+          alt="One piece logo"
+          class="footer-logo logo"
+        />
+
+        <div class="social-icons">
+          <span
+            class="iconify icon"
+            data-inline="false"
+            data-icon="brandico:twitter-bird"
+            style="font-size: 27px"
+          ></span>
+          <span
+            class="iconify icon"
+            data-inline="false"
+            data-icon="brandico:facebook-rect"
+            style="font-size: 32px"
+          ></span>
+          <span
+            class="iconify icon"
+            data-inline="false"
+            data-icon="ion:logo-instagram"
+            style="font-size: 35px"
+          ></span>
+        </div>
+
+        <h3 class="designer">Designed by Gazer Suthy</h3>
+      </div>
+    </footer>
+  </body>
+  <script src="./mobile-nav.js"></script>
+</html>
